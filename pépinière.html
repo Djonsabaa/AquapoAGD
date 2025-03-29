@@ -1,0 +1,407 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pépinière Verte Vie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .slider-container {
+            width: 100%; 
+            overflow: hidden;
+            position: relative; 
+            border: 2px solid #ddd;
+           
+          }
+          
+          .slider {
+            
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+          }
+          
+          .slide {
+            width: 100%; /* Même largeur que le container */
+            height: 200px;
+          }
+          
+          button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+          }
+          
+          #prev {
+            left: 10px;
+          }
+          
+          #next {
+            right: 10px;
+          }
+          
+    </style>
+</head>
+<body class="bg-green-50">
+    <!-- <header class="bg-green-600 text-white p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Pépinière Verte Vie</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-green-200">Accueil</a></li>
+                    <li><a href="#categories" class="hover:text-green-200">Catégories</a></li>
+                    <li><a href="#contact" class="hover:text-green-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+      
+
+        <section id="categories" class="py-16">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12">Nos Catégories de Plantes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300" alt="Bambou" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Bambou</h3>
+                            <p class="text-gray-600">Différentes variétés de bambou pour créer une ambiance zen</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300" alt="Semences" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Semences</h3>
+                            <p class="text-gray-600">Large choix de semences pour votre potager</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300" alt="Goyave" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Goyave</h3>
+                            <p class="text-gray-600">Plants de goyavier pour des fruits délicieux</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300" alt="Plantes d'ornement" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Plantes d'ornement</h3>
+                            <p class="text-gray-600">Embellissez votre jardin avec nos plantes décoratives</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300" alt="Plantes pour clôture" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Plantes pour clôture</h3>
+                            <p class="text-gray-600">Créez une barrière naturelle avec nos plantes de clôture</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300" alt="Plantes médicinales" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Plantes médicinales</h3>
+                            <p class="text-gray-600">Découvrez les bienfaits des plantes médicinales</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300" alt="Plantes non lignées" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Plantes non lignées</h3>
+                            <p class="text-gray-600">Variété de plantes herbacées pour votre jardin</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300" alt="Bois d'œuvre" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Bois d'œuvre</h3>
+                            <p class="text-gray-600">Arbres pour la production de bois de qualité</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300" alt="Fleurs" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Fleurs</h3>
+                            <p class="text-gray-600">Ajoutez de la couleur à votre jardin avec nos fleurs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-green-100 py-16">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">Contactez-nous</h2>
+                <form class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Nom</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-green-600 transition duration-300">Envoyer</button>
+                </form>
+            </div>
+        </section>
+    </main>  
+
+
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pépinière Verte Vie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .slider-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 10px;
+        }
+
+        .slide {
+            flex: 0 0 calc(100% / 3);
+            transition: 0.5s;
+            text-align: center;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .slide h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .slide p {
+            font-size: 1rem;
+            color: #4a5568;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 50%;
+        }
+
+        #prev { left: 10px; }
+        #next { right: 10px; }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-blue-100 text-gray-800">
+
+    <section class="hero bg-blue-400 text-white py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Bienvenue à la Pépinière Verte Vie</h2>
+            <p class="text-xl mb-8">Découvrez notre large sélection de plantes pour embellir votre espace de vie</p>
+            <a href="#categories" class="bg-white text-blue-400 py-2 px-6 rounded-full text-lg font-semibold hover:bg-green-100 transition duration-300">Explorer nos plantes</a>
+        </div>
+    </section>
+
+    <section class="py-16 text-center">
+        <h2 class="text-3xl font-bold">Nos Plantes</h2>
+    </section>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="Images/bambou.png" alt="Bambou">
+                <h3>Bambou</h3>
+                <p>Différentes variétés de bambou pour une ambiance zen.</p>
+            </div>
+
+            <div class="slide">
+                <img src="Images/olivier.png" alt="olive">
+                <h3>Olivier</h3>
+                <p>Plantes fraîches pour un potager sain.</p>
+            </div>
+            <div class="slide">
+                <img src="Images/plantes_d_ornement.png" alt="Fleurs déco">
+                <h3>Pantes d'ornementales</h3>
+                <p>Ajoutez de la couleur avec nos fleurs décoratives pour embellir vos jardins.</p>
+            </div>
+
+            <div class="slide">
+                <img src="Images/fleurs_deco.png" alt="Fleurs déco">
+                <h3>Fleurs Déco</h3>
+                <p>Ajoutez de la couleur avec nos fleurs décoratives pour embellir vos jardins.</p>
+            </div>
+            <div class="slide">
+                <img src="Images/haie-buisson.png" alt="Haie buisson">
+                <h3>Haie Buisson</h3>
+                <p>Créez une clôture naturelle avec nos haies.</p>
+            </div>
+           
+           
+        </div>
+        <button id="prev" class="slider-btn">&#10094;</button>
+        <button id="next" class="slider-btn">&#10095;</button>
+    </div>
+
+    <section class="py-16 text-center">
+        <h2 class="text-3xl font-bold">Nos semences</h2>
+    </section>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="Images/acacia.png" alt="acacia" >
+                <h3>Acacia</h3>
+                <p>.</p>
+            </div>
+
+              
+            <div class="slide">
+                <img src="Images/Moringa oleifera.png" alt="moringa">
+                <h3>moringa oleifera</h3>
+                <p>.</p>
+            </div>
+            <div class="slide">
+                <img src="Images/plantes-goyave.png" alt="Goyave">
+                <h3>Goyave</h3>
+                <p.</p>
+            </div>
+             
+            <div class="slide">
+                <img src="Images/plante_aloe vera.jpg" alt="aloe vera">
+                <h3>Aloe vera</h3>
+                <p></p>
+            </div>
+            <div class="slide">
+                <img src="Images/laurier-rose.avif" alt="Laurier-rose">
+                <h3>Laurier-rose</h3>
+                <p>.</p>
+            </div>
+            <div class="slide">
+                <img src="Images/Eucalyptus_Alba.png" alt="Eucalyptus">
+                <h3>Eucalyptus</h3>
+                <p>.</p>
+            </div>
+           
+           
+            <!-- <div class="slide">
+                <img src="Images/bg.avif" alt="Background">
+                <h3>Jardin Verdoyant</h3>
+                <p>Un espace vert pour un bien-être optimal.</p>
+            </div> -->
+        </div>
+        <button id="prev" class="slider-btn">&#10094;</button>
+        <button id="next" class="slider-btn">&#10095;</button>
+    </div>
+
+    <section id="contact" class="bg-blue-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contactez-nous</h2>
+            <form class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Nom</label>
+                    <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-400 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-green-600 transition duration-300">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Wakkilaré Savon. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.slider-container').forEach(container => {
+            const slider = container.querySelector('.slider');
+            const slides = container.querySelectorAll('.slide');
+            const prevBtn = container.querySelector('#prev');
+            const nextBtn = container.querySelector('#next');
+            
+            let index = 0;
+            const slidesToShow = 3;
+            const slideWidth = slides[0].offsetWidth + 10; // Largeur d'un slide avec l'espace
+        
+            function showSlide(i) {
+                if (i > slides.length - slidesToShow) index = 0;
+                if (i < 0) index = slides.length - slidesToShow;
+                slider.style.transform = `translateX(-${index * slideWidth}px)`;
+            }
+        
+            nextBtn.addEventListener('click', () => {
+                index += 1;
+                if (index > slides.length - slidesToShow) index = 0;
+                showSlide(index);
+            });
+        
+            prevBtn.addEventListener('click', () => {
+                index -= 1;
+                if (index < 0) index = slides.length - slidesToShow;
+                showSlide(index);
+            });
+        });
+        
+    </script>
+</body>
+</html>

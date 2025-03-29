@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #e7e5e5;
+    
+        }
+        header{
+            position: fixed;
+            height: 100px;
+            width: 100%;
+            background: white;
+            transition: all 0.5s ease-out;
+            text-align: center;
+            color: rgb(15, 61, 61);
+            display: flex;
+            
+        }
+        header nav ul {
+            height: 100%;
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 40px;
+            text-indent: 20px;
+       }
+        .log{
+            margin-right: 50px;
+            margin-left: 40px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+        ul li a:hover{
+            background-color:white;
+            color:#fd7e14;
+            transition: all ease 0.4s;
+        }
+        .descrip{
+            text-align: center;
+            text-decoration: underline;
+            font-size: large;
+            color: firebrick;
+            text-shadow: 1px 1px 2px red;
+            margin-top: 10px;
+            margin-right: 45%;
+            
+        }
+        
+         @keyframes clignoter {
+            0% {opacity: 1;}
+            50% {opacity: 0;}
+            100% {opacity: 1;}
+            }
+        .clignotant{
+            animation: clignoter 3s infinite;
+            color: red;
+            font-size: large;
+            justify-content: left;
+            margin-top: 25px;
+        }
+        .marques-dropdown {
+            font-size: 5px;
+            display: none; 
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+            z-index: 1;
+        }
+
+        .marques-dropdown a {
+            color: black;
+            padding: 2px 4px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .marques-dropdown a:hover {
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+        li:hover .marques-dropdown {
+            display: block;
+        }
+
+        /* formulaire */
+.wrapper {
+    width: 715px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px gray;
+    padding: 20px;
+    text-align: center;
+   /* padding-top: 50px; */
+
+    margin: auto;
+    margin-top: 75px;
+    position: relative;
+    
+  }
+  .wrapper h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: blue;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .wrapper form {
+    margin: 20px 16px;
+    
+  }
+
+  .dbl-field {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;
+  
+  }
+
+  field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: calc(100% / 2 - 13px); 
+    flex: 1; 
+    position: relative; 
+    }
+
+    .dbl-field .field {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: calc(100% / 2 - 13px); 
+      flex: 1; 
+      position: relative; 
+      margin-right: 20px; /* Pour les champs côte à côte */
+      margin-bottom: 15px; 
+  }
+
+    .field input {
+        padding: 10px ;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        width: 300px;
+        padding-left: 30px; /* Ajoute un espace pour éviter que l'icône ne chevauche le texte */
+        font-size: 16px;
+        
+    }
+
+    .field label{
+        text-align: left;
+        margin-left: 10px;
+    }
+  
+  .field i {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    margin: bottom 5px;
+    margin-top: 8px;
+   font-size: 20px;
+            
+  }
+  .message {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: left;
+  } 
+  .message textarea {
+    padding-left: 40px; /* Espace pour les icônes */
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    padding: 30px;
+  }
+  .message i {
+    position: absolute;
+    left: 5px;
+    top: 30px;
+    color: #888;
+    margin-top: 20px;
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .button-area button {
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 13px 25px;
+    background: #0D6EFD;
+    transition: background 0.3s ease;
+  }
+  .button-area button:hover {
+    background: #025ce3;
+  }
+
+  footer{
+    border-bottom-color: white;
+    background-color:rgb(88, 156, 224);
+    color:white;
+    display:flex;
+    padding-top:50px;
+    font-size:15px;
+    align-content: center;
+    margin-top: 80px;
+}
+footer div{
+padding:20px;
+
+}
+.img1:hover{
+border-radius:0px;
+font-size:25px;
+border:0px ;
+transform-style:preserve-3d;
+transition: all ease 0.2s;
+border-bottom:3px solid #DD2A7B;
+}.img2:hover{
+
+
+
+border:0px ;transition: all ease 0.2s;
+font-size:25px;border-bottom:3px solid #1DA1F2;
+}.img3:hover{
+border:0px ;transition: all ease 0.2s;
+font-size:25px;
+border-bottom:3px solid #3b5998;
+}.img4:hover{
+
+font-size:25px;
+border:0px ;transition: all ease 0.2s;
+border-bottom:3px solid #FF0000;
+}
+.net a{
+margin :20px;
+height:100px;
+font-size:20px;
+font-size:20px;
+color: #fd7e14;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h2>AGD</h2>
+        <h1 class="clignotant">AFRICA GLOBAL DISCOVERY </h1>
+        <div class="log">
+            <img src="img/logo.png" alt="">
+        </div>
+        
+        <nav>
+           
+            <ul>
+     <li><a href="#accueil.html" target="_blank"> <i class="fa-solid fa-house" style="color: #e7e5e5;"></i> Accueil </a></li>
+    <li> <a href="A propos.html" target="_blank"> A propos</a> </li>
+    <li> <a href="services.html" target="_blank">Services </a> 
+    <div class="marques-dropdown">
+        <a href="aquaculture.html">Aquaculture </a>
+        <a href="hydroculture.html">Hydroponie </a>
+        </div> </li>
+        <li> <a href="partenaires.html" target="_blank"> Nos partenaires</a> </li>
+
+        <li> <a href="evenements.html" target="_blank"> Nos évènements</a>
+         <div class="marques-dropdown">
+            <a href="Foires.html">les foires</a>
+        <a href="ventes_goupe.html">Les ventes en groupe </a>
+         </div>
+        </li>
+    <li> <a href="publicités.html" target="_blank">Publicités</a> </li> 
+    <li> <a href="#commande.html" target="_blank" class="comd">Commande</a> </li> 
+</ul>      
+
+    </nav>
+    </header>
+    <br> <br>
+    
+    <div class="wrapper">
+        <h2>Contactez-nous</h2>
+        <hr style="color: #025ce3; border: 2px solid;">
+  
+        <form action="mergo.php" method="post">
+          <div class="dbl-field">
+            <div class="field">
+              <label for="nom"> Nom</label>
+              <input type="text" name="nom" placeholder="votre nom" id="nom" required>
+              <i class='fas fa-user'></i>
+            </div>
+  
+            <div class="field">
+              <label for="telephone" >Téléphone</label>
+              <input type="text" name="telephone" placeholder="votre numero" id="telephone" required>
+              <i class='fas fa-phone-alt'></i>
+            </div>
+          </div>
+          
+          <div class="dbl-field">
+            <div class="field">
+              <label for="email"> Email</label>
+              <input type="text" name="email" placeholder="votre email" id="email" required>
+              <i class='fas fa-envelope'></i>
+            </div>
+          </div>
+          
+          <div class="message"> 
+            <label for="message">Message</label>
+            <textarea placeholder="Ecrire un message" name="message" id="message"></textarea>
+            <i class='fa-comment'></i>
+         </div> 
+          <div class="actions">
+            <div class="button-area">
+              <button type="submit">Envoyer </button>
+            </div>
+            <!-- <div class="social-icons">
+              <a href="https://www.instagram.com/lamergo_group/profilecard/?igsh=MXRvdWFte TEObGY waQ==" target="_blank" class="fa-brands fa-instagram"></a>
+              <a href="https://www.twitter.com" target="_blank" class="fa-brands fa-twitter"></a>
+              <a href="https://www.facebook.com" target="_blank" class="fa-brands fa-facebook-f"></a>
+              <a href="https://www.youtube.com" target="_blank" class="fa-brands fa-youtube"></a>
+            </div> -->
+          </div>
+        </form>
+      </div> 
+    
+      <footer>
+        <div class="first">          
+            <img src="logo.png" alt="logo_car" class="logocar">
+        </div>
+        <div class="second">
+            <p> Acteurs: <br>
+                AMIDI <br>
+                B.INTER <br>
+                JAM ALLO GROUPE <br>
+                SERENITY TRAVEL AGENCY
+            </p>
+        </div>
+        <div class="third">
+            <p> Réseaux sociaux:
+                </p><br>
+                <p class="net">
+                    <a href="https://www.instagram.com/"class="img1" target="_blank"target="_blank"><i class="fa-brands fa-instagram" style="color:#DD2A7B;" ></i></a>
+                    <a href="https://www.twitter.com" class="img2" target="_blank"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a>
+                    <a href="https://www.facebook.com" class="img3"target="_blank"><i class="fa-brands fa-facebook-f" style="color: #3b5998;"></i></a>
+                    <a href="https://www.youtube.com" class="img4"target="_blank"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i></a>
+                </p>
+        </div>
+    
+        <div class="fourth"> 
+            <p>Contacts:<br><br>
+                +212 555-0000 <br><br>
+                Email:<br> </p>
+                <p>
+               site web: www.race.com
+                </p>
+        </div>
+        <div class="fifth"> <address> Adresse</address>
+            <p>
+                Tambacounda, Senegal
+                </p><br>
+    </footer> 
+    
+</body>
+</html>

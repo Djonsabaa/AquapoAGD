@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>A propos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+   /* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; 
+}
+
+    /* header */ 
+  
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      width: 100%;
+      height: 7rem;
+      display: flex;
+     justify-content: center; 
+     align-items: center; 
+      background: white;
+      box-shadow: 0 0 25px skyblue;
+    }
+    
+        body {
+         font-family: Arial, sans-serif; 
+          color: #333;
+          line-height: 1.6;
+          background-color: #f4f4f9;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      /*align-items: center; */
+      max-width: 1200px;
+      width: 100%;
+    /*  padding: 0 10px; */
+    }
+    .logo{
+      margin-left:5px ;
+    }
+    .navbar img {  
+      width: 350px;
+     max-width: 300px;  
+     object-fit: contain; /* l'image garde ses proportions */
+    }
+    /* Cacher le menu toggle sur les grands écrans */
+    .navbar input#menu-toggler {
+      display: none;
+    }
+    
+    /* Menu hamburger (icon) */
+    .navbar #hamburger-btn {
+      display: none; /* Cacher le bouton hamburger sur grand écran */
+      cursor: pointer;
+    }
+    /* Liens du menu */
+    .navbar .all-links {
+      display: flex;
+      align-items: center;
+      margin-right: 40px;
+    }
+    .navbar .all-links li {
+      list-style: none;
+      margin-left: 40px;
+    }
+    .navbar .all-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.1rem;
+      } 
+  
+
+   
+.main {
+ /* height: 10%; */
+  width: 60%;
+  margin-top: 120px;
+  
+}
+
+.wrapper,
+.slide {
+  position: relative;
+  width: 60%;
+  height: 500px;
+}
+.slide {
+  overflow: hidden;
+}
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #3498db;
+  z-index: 10;
+}
+.slide .image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  
+}
+.slide .image-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+.image-data span.text {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+.image-data h2 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #fff;
+}
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #333;
+  background: #fff;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+a.button:hover {
+  color: #fff;
+  background-color: #c87e4f;
+}
+/* swiper button css */
+.nav-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.swiper-button-next {
+  right: 50px;
+}
+.swiper-button-prev {
+  left: 50px;
+}
+.nav-btn::before,
+.nav-btn::after {
+  font-size: 25px;
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  visibility: hidden;
+}
+.swiper-pagination-bullet-active {
+  border: 2px solid #fff;
+  background-color: #c87e4f;
+}
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    visibility: hidden;
+  }
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+}
+
+
+section {
+  width: 85%;
+  max-width: 900px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 5px solid #140664;
+
+  
+}
+
+h1, h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: skyblue;
+}
+
+p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
+}
+
+#historique{
+  margin-top: 6%;
+}
+#mission_vision{
+  display: flex;
+  justify-content: space-between;
+  margin-top:6%;
+  
+}
+.mission{
+  display: block;
+  margin-right: 60px;
+}
+
+.vission{
+  display: block;
+}
+
+#equipe{
+  margin-top: 6%;
+}
+
+ /* Carousel Styles */
+
+ .carousel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 30px 0;
+  position: relative;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px; /* Espacement de 20px entre chaque image */
+  animation: scroll 15s linear infinite;
+}
+
+.carousel-item {
+  min-width: 200px; /* Taille fixe pour chaque image */
+  flex: 0 0 auto;
+  text-align: center;
+}
+.carousel-item img {
+  width: 180px; /* Fixe la largeur de toutes les images */
+  height: 250px; /* Fixe la hauteur de toutes les images */
+  object-fit: cover; /* Ajuste l'image pour remplir le cadre sans déformation */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px; /* Espacement entre l'image et le texte */
+}
+
+.carousel-item p {
+  font-size: 0.9em;
+  color: #777;
+  font-style: italic;
+  margin-top: 0;
+}
+  /* Animation de défilement */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+
+  /* footer */
+
+  footer{
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background: skyblue;
+    margin-top: 70px;
+  }
+  .main-content{
+    display: flex;
+  }
+  .main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: white;
+  }
+  .box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: gray;
+    top: -10px;
+  }
+  .left .content p{
+    text-align: justify;
+  }
+  .left .content .social{
+    margin: 20px 0 0 0;
+  }
+  .left .content .social a{
+    padding: 0 2px;
+  }
+  .left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: white;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 30px;
+  }
+  .left .content .social a span:hover{
+    background: #f12020;
+  }
+  .center .content .fas{
+    font-size: 1.4375rem;
+    background: white;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .center .content .fas:hover{
+    background: #f12020;
+  }
+  .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .center .content .phone{
+    margin: 15px 0;
+  }
+  .right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
+  }
+  .right form .msg{
+    margin-top: 10px;
+  }
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 1.0625rem;
+    background: white;
+    padding-left: 10px;
+    border: 1px solid #222222;
+  }
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #3498db;
+  }
+  .right form input{
+    height: 35px;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+  .right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: gray;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .right form .btn button:hover{
+    background: #000;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: skyblue;
+  }
+  .bottom center span{
+    color: white;
+  }
+  .bottom center a{
+    color: skyblue;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }  
+  
+  
+  </style>
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="LOGO LAMERGO (1).svg" alt="" ">
+        </div>
+          
+          <input type="checkbox" id="menu-toggler">
+          <label for="menu-toggler" id="hamburger-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+              </svg>
+          </label>
+          <ul class="all-links">
+              <li><a href="#home" style="color: black;">A propos</a></li>
+              <li><a href="#services" style="color: black;">Services</a></li>
+              <li><a href="#portfolio" style="color: black;">Formations</a></li>
+              <li><a href="#about" style="color: black;">Blog/Actualites</a></li>
+              <li><a href="#about" style="color: black;">Carrieres</a></li>
+  
+              <li><a href="#contact" style="color: black;">Contactez-nous</a></li>
+          </ul>
+      </nav>
+      </header>
+
+
+    <section class="main swiper mySwiper">
+      <div class="wrapper swiper-wrapper">
+        <div class="slide swiper-slide">
+          <img src="img_Ar.jpg" alt="" width="800px" height="650px">
+          <div class="image-data">
+            <!-- <span class="text"> </span> -->
+            <h2>
+              Africa Global Discovery<br />  </h2>
+            <a href="#historique" class="button">A propos</a>
+          </div>
+        </div>
+        <div class="slide swiper-slide">
+          <img src="prog.jpg" alt="" width="900px">
+
+          <div class="image-data">
+           <!-- <h2>  Historique</h2>  -->
+      <span class="text"> Nous sommes ravis de vous accueillir sur le site AGD, un acteur innovant dans les domaines de la technologie, de l’éducation et des services.
+      </span>
+            <br>
+            <a href="#historique" class="button">A propos</a>
+          </div>
+        </div>
+        <div class="slide swiper-slide">
+          <!-- <img src="https://th.bing.com/th/id/OIP.Z5doBi_GrQv0keWGhmUrFwHaFj?w=278&h=209&c=7&r=0&o=5&pid=1.7" alt="" class="image" /> -->
+          <img src="tc.avif" alt="" width="900px">
+          <div class="image-data">
+            <!-- <span class="text"> </span> -->
+            <!-- <h2> </h2> -->
+            <a href="#historique" class="button">A propos</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next nav-btn"></div>
+      <div class="swiper-button-prev nav-btn"></div>
+      <div class="swiper-pagination"></div>
+    </section>
+    
+    
+    <section id="historique" class="fade-in">
+<h2>Historique</h2>
+<p style="  font-family: Arial, sans-serif; ">   Lamergo Group a été créé avec la vision de fournir des solutions innovantes dans des secteurs essentiels tels que la 
+            technologie, l’éducation et les services. Depuis sa fondation, l'entreprise a élargi son offre en proposant des
+             formations spécialisées en ligne, une agence de voyage pour organiser vos déplacements, ainsi que des services de
+              design graphique pour améliorer l'identité visuelle des entreprises. Aujourd'hui, Lamergo Group continue d'évoluer, 
+              en mettant l'accent sur l'innovation et la durabilité, tout en créant de la valeur pour ses clients et partenaires.
+    </p>
+  
+    </section>
+      
+
+  <section id="mission_vision" class="fade-in">
+    <div class="mission">
+      <h2>Notre Mission</h2>
+      <p>Notre mission est de concevoir et de proposer des solutions innovantes qui améliorent le quotidien de nos clients et partenaires. En intégrant les dernières avancées technologiques et en répondant aux besoins spécifiques de chaque utilisateur, nous visons à simplifier et enrichir leur expérience. Nous nous engageons également à générer une réel
+          le valeur ajoutée pour la société en contribuant à un impact positif et durable dans chaque projet que nous entreprenons..</p>
+    </div>
+   
+  
+<div>
+  <h2>Notre Vision</h2>
+  <p>Notre vision est de devenir un acteur de référence et un pionnier dans les domaines de la technologie et des services. Nous aspirons à façonner l'avenir en plaçant la créativité, l'efficacité et la responsabilité sociale au coeur de notre démarche. À travers notre engagement pour l’innovation et le développement durable, nous souhaitons
+       inspirer le changement et accompagner nos clients et partenaires vers un monde plus connecté, responsable et performant</p>
+</div>
+   
+  </section>
+
+<!-- EQUIPE -->
+
+<section id="equipe" class="fade-in">
+  <h2>L'équipe dirigeante</h2>
+  <!-- Carrousel d'images -->
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="IMG-20221124-WA0016.jpg" alt="Image 1">
+        <h3>nom_membre</h3>
+        <p>Description_membre</p>
+      </div>
+      <div class="carousel-item">
+        <img src="IMG-20221124-WA0016.jpg" alt="Image 2">
+        <h3>nom_membre</h3>
+        <p>Description_membre </p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="IMG-20221124-WA0016.jpg" alt="Image 3">
+        <h3>nom_membre</h3>
+        <p>Description_membre</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="PSN_8560 copie.jpg" alt="Image 3">
+        <h3>nom_membre</h3>
+        <p>Description_membre 4</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="PSN_8560 copie.jpg" alt="Image 3">
+        <h3>nom_membre</h3>
+        <p>Description de l'image 4</p>
+      </div>
+
+
+      <div class="carousel-item">
+        <img src="PSN_8560 copie.jpg" alt="Image 3">
+        <h3>nom_membre</h3>
+        <p>Description de l'image 4</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+
+// membres nv 
+
+
+<h2 style="margin-left: 280px;">L'équipe dirigeante</h2>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="IMG-20221124-WA0016.jpg" alt="Image 1">
+        <h3>nom_membre</h3>
+        <p>Description image 1</p>
+      </div>
+      <div class="carousel-item">
+        <img src="IMG-20221124-WA0016.jpg" alt="Image 2">
+        <h3>nom_membre</h3>
+        <p>Description image 2</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="IMG-20221124-WA0016.jpg" alt="Image 3">
+        <h3>nom_membre</h3>
+        <p>Description image 3</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="PSN_8560 copie.jpg" alt="Image 3">
+        <h3>nom_membre</h3>
+        <p>Description de l'image 4</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="PSN_8560 copie.jpg" alt="Image 3">
+        <h3>nom_membre</h3>
+        <p>Description de l'image 4</p>
+      </div>
+
+
+      <div class="carousel-item">
+        <img src="PSN_8560 copie.jpg" alt="Image 3">
+        <h3>nom_membre</h3>
+        <p>Description de l'image 4</p>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+<footer>
+  <div class="main-content">
+    <div class="left box">
+      <h2>A propos</h2>
+       <div class="content">
+        <!-- <p>Lamergo Group est un groupe diversifié intervenant dans de multiples secteurs, incluant les 
+technologies, la formation, les services aux entreprises, le développement durable, la santé, et bien 
+d'autres. L'objectif est de renforcer la présence digitale de l'entreprise et de promouvoir ses services.</p> -->
+        <div class="social">
+          <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+          <a href="#"><span class="fab fa-twitter"></span></a>
+          <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
+          <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="center box">
+      <h2>Addresse</h2>
+      <div class="content">
+        <div class="place">
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="text">Casablanca Hay Mourad Maroc </span>
+        </div>
+        <div class="phone">
+          <span class="fas fa-phone-alt"></span>
+          <span class="text">+212 629482958 </span>
+        </div>
+        <div class="email">
+          <span class="fas fa-envelope"></span>
+          <span class="text">lamergogroup@gmail.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="right box">
+      <h2>Contactez-nous </h2>
+      <div class="content">
+        <form action="#">
+          <div class="email">
+            <div class="text">Email *</div>
+            <input type="email" required>
+          </div>
+          <div class="msg">
+            <div class="text">Message *</div>
+            <textarea rows="2" cols="25" required></textarea>
+          </div>
+          <div class="btn"style="color: #000;">
+            <button type="submit" style="color: white;">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="bottom" style="color: skyblue;">
+    <center>
+      <span class="credit">Created By <a href="" style="color: black;">Mergo Group</a> | </span>
+      <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
+    </center>
+  </div>
+    </footer>    
+
+
+     <!-- Swiper JS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <!-- Initialize Swiper -->
+     <script>
+       var swiper = new Swiper(".mySwiper", {
+         slidesPerView: 1,
+         loop: true,
+         pagination: {
+           el: ".swiper-pagination",
+           clickable: true,
+         },
+         navigation: {
+           nextEl: ".swiper-button-next",
+           prevEl: ".swiper-button-prev",
+         },
+         autoplay: {
+           delay: 3000, // Délai en millisecondes entre chaque slide (ici 3 secondes)
+           disableOnInteraction: false, // Continue à défiler même si l'utilisateur interagit avec les boutons de navigation
+         },
+       });
+
+
+       // EQUIPE 
+
+       document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+      
+        const revealSection = () => {
+          sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < window.innerHeight - 50) {
+              section.classList.add("visible");
+            }
+          });
+        };
+      
+        window.addEventListener("scroll", revealSection);
+      
+        // Carousel functionality
+        const carousel = document.querySelector(".carousel");
+        let index = 0;
+        const items = document.querySelectorAll(".carousel-item");
+      
+        const slideCarousel = () => {
+          index++;
+          if (index >= items.length) {
+            index = 0;
+          }
+          carousel.style.transform = `translateX(-${index * 100}%)`;
+        };
+      
+        setInterval(slideCarousel, 3000);
+      });
+      
+     </script>
+     
+  </body>
+</html>

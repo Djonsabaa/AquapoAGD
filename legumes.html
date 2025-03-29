@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Légumes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        body{
+            
+        
+        }
+        header{
+        position: fixed;
+        height: 100px;
+        width: 100%;
+        background-color: transparent;
+            transition: all 0.5s ease-out;
+            text-align: center;
+            display: flex;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;    
+            
+        }
+        header nav ul {
+            height: 100%;
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 40px;
+            text-indent: 20px;
+          
+        }
+         .log img{
+            width: 90px;
+            height: 100px;
+            margin-right: 170px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+           /* padding: 5px 10px;*/
+        }
+        ul li a:hover{
+            background-color:white;
+            color:#fd7e14;
+            border-radius: 5px;
+            transition: all ease 0.4s;
+        
+            
+        }
+         /* fenetre Modal */
+  .modal {
+    position: fixed;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+}
+.modal h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+.modal ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 40px;
+}
+.modal ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1em;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.modal ul li a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.service{
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    
+}
+        .legume-card {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .legume-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgb(96, 140, 223);
+            background-color: rgb(96, 140, 223);
+        }
+        .legume-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        
+        }
+
+        footer{
+            border-bottom-color: white;
+            background-color:rgb(88, 156, 224);
+            color:white;
+            display:flex;
+            padding-top:50px;
+            font-size:15px;
+            align-content: center;
+            margin-top: 80px;
+        }
+    footer div{
+        padding:20px;
+
+    }
+    .img1:hover{
+        border-radius:0px;
+        font-size:25px;
+        border:0px ;
+        transform-style:preserve-3d;
+        transition: all ease 0.2s;
+        border-bottom:3px solid #DD2A7B;
+    }.img2:hover{
+        
+        
+    
+        border:0px ;transition: all ease 0.2s;
+        font-size:25px;border-bottom:3px solid #1DA1F2;
+    }.img3:hover{
+        border:0px ;transition: all ease 0.2s;
+        font-size:25px;
+        border-bottom:3px solid #3b5998;
+    }.img4:hover{
+    
+        font-size:25px;
+        border:0px ;transition: all ease 0.2s;
+        border-bottom:3px solid #FF0000;
+    }
+    .net a{
+        margin :20px;
+        height:100px;
+        font-size:20px;
+        font-size:20px;
+        color: #fd7e14;
+    }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <header>
+        <div class="log">
+            <img src="Images/logo-nature.avif" alt="">
+        </div>
+        <nav>
+            <ul>
+     <li><a href="#accueil.html" target="_blank"> <i class="fa-solid fa-house" style="color: #e7e5e5;"></i> Accueil </a></li>
+    <li> <a href="A propos.html" target="_blank"> A propos</a> </li>
+    
+    <li><a href="#" onclick="openModal('servicesModal')">Services</a></li>
+                <li><a href="#" onclick="openModal('partnersModal')">Nos partenaires</a></li>
+    <li> <a href="Actualités.html" target="_blank">Publicités</a> </li> 
+    <li> <a href="commande.html" target="_blank" class="comd">Commande</a> </li> 
+    </ul>      
+    </nav>
+    </header>
+    
+    <div id="servicesModal" class="modal">
+      <div class="service">
+      <h2>Services:</h2>
+      <ul>
+          <li><a href="plantes.html">Plantes</a></li>
+          <li><a href="legumes.html">légumes</a></li>
+          <li><a href="poissons.html">Poissons</a></li>
+      </ul>
+    
+      <ul>
+          <li><a href="#">Plantes</a></li>
+          <li><a href="#">légumes</a></li>
+          <li><a href="#">Poissons</a></li>
+      </ul>
+    </div> </div>
+    
+    <div id="partnersModal" class="modal">
+        <div class="service">
+            <h2>Nos partenaires</h2>
+            <ul>
+                <li><a href="#">Partenaire 1</a></li>
+                <li><a href="#">Partenaire 2</a></li>
+                <li><a href="#">Partenaire 3</a></li>
+            </ul>
+          </div>
+        </div>
+     
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+
+    <main class="flex-grow container mx-auto px-4 py-8 shadow-lg ">
+        <h1 class="text-3xl font-bold mb-6 text-center mt-24"> Nos Légumes d'Aquaponie</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="legume-card">
+                <img src="Images/tomate-removebg-preview.png" class="legume-image">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Tomates</h2>
+                    <p class="text-gray-600 mb-4">Nos tomates d'aquaponie sont juteuses, savoureuses et cultivées sans pesticides. Elles sont parfaites pour vos salades, sauces ou simplement à croquer.</p>
+                    <a href="legume-tomates.html" class="text-green-600 hover:underline">En savoir plus</a>
+                </div>
+            </article>
+            <article class="legume-card">
+                <img src="Images/carrotes.avif" alt="Laitues" class="legume-image">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Carrotes</h2>
+                    <p class="text-gray-600 mb-4">Consommée crue, râpée dans des salades, purées, gratins ou sautée..</p>
+                    <a href="legume-laitues.html" class="text-green-600 hover:underline">En savoir plus</a>
+                </div>
+            </article>
+            <article class="legume-card">
+                <img src="Images/concombre.avif" alt="Concombres" class="legume-image">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Concombres</h2>
+                    <p class="text-gray-600 mb-4">Nos concombres d'aquaponie sont croquants, rafraîchissants et gorgés d'eau. Ils sont parfaits pour vos salades d'été, vos tzatzikis ou simplement en snack.</p>
+                    <a href="legume-concombres.html" class="text-green-600 hover:underline">En savoir plus</a>
+                </div>
+            </article>
+            <article class="legume-card">
+                <img src="Images/poivron-removebg-preview.png" alt="Poivrons" class="legume-image">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Poivrons</h2>
+                    <p class="text-gray-600 mb-4">Nos poivrons d'aquaponie sont colorés, croquants et pleins de saveurs.
+                         Ils sont excellents crus en salade, grillés ou farcis pour un repas complet.</p>
+                    <a href="legume-poivrons.html" class="text-green-600 hover:underline">En savoir plus</a>
+                </div>
+            </article>
+
+            <article class="legume-card">
+                <img src="Images/navet.avif" alt="Herbes Aromatiques" class="legume-image">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Navet</h2>
+                    <p class="text-gray-600 mb-4">Navets frais utilises pour tous vos plats.</p>
+                    <a href="legume-herbes.html" class="text-green-600 hover:underline">En savoir plus</a>
+                </div>
+            </article>
+            <!-- <article class="legume-card">
+                <img src="https://via.placeholder.com/400x200?text=Fraises" alt="Fraises" class="legume-image">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Fraises</h2>
+                    <p class="text-gray-600 mb-4">Nos fraises d'aquaponie sont sucrées, juteuses et gorgées de soleil. Elles sont parfaites en dessert, en smoothie ou simplement nature pour une pause gourmande.</p>
+                    <a href="legume-fraises.html" class="text-green-600 hover:underline">En savoir plus</a>
+                </div>
+            </article> -->
+            <article class="legume-card">
+                <img src="Images/aubergines.png" alt="Aubergines" class="legume-image">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Aubergines</h2>
+                    <p class="text-gray-600 mb-4">Nos Aubergines d'aquaponie sont fraîches, parfumées et riches en saveurs. Elles sublimeront tous vos plats.</p>
+                    <a href="legume-herbes.html" class="text-green-600 hover:underline">En savoir plus</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="first">          
+            <img src="logo.png" alt="logo_car" class="logocar">
+        </div>
+        <div class="second">
+            <p> Acteurs: <br>
+                AMIDI <br>
+                B.INTER <br>
+                JAM ALLO GROUPE <br>
+                SERENITY TRAVEL AGENCY
+            </p>
+        </div>
+        <div class="third">
+            <p> Réseaux sociaux:
+                </p><br>
+                <p class="net">
+                    <a href="https://www.instagram.com/"class="img1" target="_blank"target="_blank"><i class="fa-brands fa-instagram" style="color:#DD2A7B;" ></i></a>
+                    <a href="https://www.twitter.com" class="img2" target="_blank"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a>
+                    <a href="https://www.facebook.com" class="img3"target="_blank"><i class="fa-brands fa-facebook-f" style="color: #3b5998;"></i></a>
+                    <a href="https://www.youtube.com" class="img4"target="_blank"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i></a>
+                </p>
+        </div>
+    
+        <div class="fourth"> 
+            <p>Contacts:<br><br>
+                +212 555-0000 <br><br>
+                Email:<br> </p>
+                <p>
+               site web: www.race.com
+                </p>
+        </div>
+        <div class="fifth"> <address> Adresse</address>
+            <p>
+                Tambacounda, Senegal
+                </p><br>
+    </footer> 
+    <!-- <footer class="bg-green-600 text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            &copy; 2023 AquaGrow. Tous droits réservés.
+        </div>
+    </footer> -->
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+    <script>
+            /* Modal*/
+        function openModal(modalId) {
+          document.getElementById(modalId).style.display = 'block';
+          document.getElementById('overlay').style.display = 'block';
+        }
+        
+        function closeModal() {
+          document.querySelectorAll('.modal').forEach(modal => {
+              modal.style.display = 'none';
+          });
+          document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

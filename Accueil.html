@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"  
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        body{
+            /*background: linear-gradient(135deg, rgba(0, 128, 128, 0.6), rgba(209, 194, 194, 0.8));*/
+            
+        }
+ header{
+     position: fixed;
+     height: 100px;
+     width: 100%;
+     background: transparent;
+     transition: all 0.5s ease-out;
+     text-align: center;
+            display: flex;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;           
+        }
+        header nav ul {
+           
+            height: 100%;
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 40px;
+            text-indent: 20px;
+          /*  gap: 15px;*/
+       }
+        .log{
+            margin-right: 50px;
+            margin-left: 40px;
+        }
+        nav ul li a{
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+           /* padding: 5px 10px;*/
+        }
+        ul li a:hover{
+            background-color:white;
+            color:#fd7e14;
+            border-radius: 5px;
+            transition: all ease 0.4s;
+        }
+        .descrip{
+            text-align: center;
+            text-decoration: underline;
+            font-size: large;
+            color: rgb(116, 139, 241);
+            text-shadow: 1px 1px 2px red;
+            margin-top: 10px;
+            margin-right: 45%;
+            
+        }
+        
+         @keyframes clignoter {
+            0% {opacity: 1;}
+            50% {opacity: 0;}
+            100% {opacity: 1;}
+            }
+        .clignotant{
+            animation: clignoter 3s infinite;
+            color: rgb(96, 140, 223);
+            font-size: large;
+            justify-content: left;
+            margin-top: 25px;
+        }
+
+        
+        .container{
+            text-align: center;
+        }
+        
+        .texte {
+             text-align: center;
+         width: 50%;
+         height: auto;
+        margin: 0 auto;
+        padding: 10px;
+            transform-style: preserve-3d;
+            transform: scale(1.10);
+            transition: all ease 0.5s;
+            line-height: 1.5;  
+            text-align: center;
+            font-size: 16px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            text-align: justify;
+            transform: translate(-50% 50%);
+            color: black;
+         }
+
+         .comd{
+         margin-left: 30px;
+          /* background-color: rgb(182, 126, 126); */
+         }
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            display: none;
+            z-index: 1000;
+        }
+        .modal h2 {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .modal ul {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 40px;
+        }
+        .modal ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1em;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .modal ul li a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .service{
+            display: flex;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            
+        }
+      
+
+/* Slider */
+.slider {
+  position: relative;
+  width: 100vw;
+ /* max-width: 100%;*/
+   height: 600px; 
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+ /* padding-top: 50px;*/
+ 
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%; /* Adapte chaque slide à la hauteur du slider */
+  position: relative;
+ 
+}
+
+.slide img {
+  width: 100%;
+  height: 50%; /* Adapte l'image à la taille du slider */
+  object-fit: contain; /* Affiche toute l'image sans la couper */
+  background-color: whitesmoke; /* Ajoute un fond noir pour les bandes visibles */
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 50%;
+  left: 10%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 20px;
+  max-width: 50%;
+  border-radius: 5px;
+  
+}
+
+.slide-content h2 {
+  margin: 0 0 10px;
+  font-size: 2em;
+}
+
+.slide-content p {
+  margin: 0 0 20px;
+  font-size: 1.2em;
+}
+
+.slide-content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.slide-content .btn:hover {
+  background-color: #19ac2d;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+
+        
+section{
+   margin-top: 50px;
+   text-align: center;
+    }
+
+span{
+color: #734cdd;
+         }
+        
+
+    /* sous prog */
+.prog {
+    text-align: center;
+    padding: 2rem;
+}
+
+.prog .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.prog .card {
+    background: white;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.prog .card:hover {
+    transform: translateY(-10px);
+    color: #3498db; /* Change color on hover */
+}
+
+/* Icon Colors */
+.card:nth-child(1) .icon {
+    color: #e74c3c; 
+    font-size: 3rem;
+}
+
+.card:nth-child(2) .icon {
+    color: #8e44ad;
+    font-size: 3rem;
+}
+
+.card:nth-child(3) .icon {
+    color: #27ae60; 
+    font-size: 3rem;
+}
+
+.card:nth-child(4) .icon {
+    color: #f1c40f; 
+    font-size: 3rem;
+}
+
+/* Icon Hover Effect */
+.icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #1abc9c;
+}
+
+
+
+footer{
+            border-bottom-color: white;
+            background-color:rgb(88, 156, 224);
+            color:white;
+            display:flex;
+            padding-top:50px;
+            font-size:15px;
+            align-content: center;
+            margin-top: 80px;
+        }
+    footer div{
+        padding:20px;
+
+    }
+    .img1:hover{
+        border-radius:0px;
+        font-size:25px;
+        border:0px ;
+        transform-style:preserve-3d;
+        transition: all ease 0.2s;
+        border-bottom:3px solid #DD2A7B;
+    }.img2:hover{
+        
+        
+    
+        border:0px ;transition: all ease 0.2s;
+        font-size:25px;border-bottom:3px solid #1DA1F2;
+    }.img3:hover{
+        border:0px ;transition: all ease 0.2s;
+        font-size:25px;
+        border-bottom:3px solid #3b5998;
+    }.img4:hover{
+    
+        font-size:25px;
+        border:0px ;transition: all ease 0.2s;
+        border-bottom:3px solid #FF0000;
+    }
+    .net a{
+        margin :20px;
+        height:100px;
+        font-size:20px;
+        font-size:20px;
+        color: #fd7e14;
+    }
+
+    /*phrase d accroche */
+    .hero {
+        background-image: url('https://source.unsplash.com/1600x900/?aquaponics');
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 128, 128, 0.6), rgba(209, 194, 194, 0.8));
+        opacity: 0;
+        animation: fadeIn 4s forwards;
+      }
+      
+      .hero-content {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 2rem;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slideIn 1s 0.5s forwards;
+      }
+      
+      .hero-content h2,
+      .hero-content p {
+        margin: 0;
+        animation: textGlow 2.5s infinite alternate;
+      }
+      
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes textGlow {
+        from {
+          text-shadow: 0 0 5px #2124d1;
+        }
+        to {
+          text-shadow: 0 0 10px #3f70da;
+        }
+      }
+      
+      /* chiffres*/
+      .chart-container {
+        display: flex;
+        align-items: center;
+        width: 20%;
+        margin-left: 30%;
+      }
+      .chart-container canvas {
+        margin-right: 40px; /* Espace entre le diagramme et la légende */
+        text-align: center;
+      }
+      
+      .legend {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      .legend-color {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        border-radius: 50%;
+      }
+</style>
+</head>
+
+<body>
+    <header>
+        <h2>AGD</h2>
+        <h1 class="clignotant">AFRICA GLOBAL DISCOVERY </h1>
+        <div class="log">
+            <img src="img/logo.png" alt="">
+        </div>
+        
+        <nav>
+           
+            <ul>
+     <li><a href="#accueil.html" target="_blank"> <i class="fa-solid fa-house" style="color: #e7e5e5;"></i> Accueil </a></li>
+    <li> <a href="A propos.html" target="_blank"> A propos</a> </li>
+
+    <li><a href="#" onclick="openModal('servicesModal')">Services</a></li>
+    <li><a href="#" onclick="openModal('partnersModal')">Nos partenaires</a></li>
+    <li> <a href="Actualités.html" >Activités</a> </li> 
+    <li> <a href="commande.html" target="_blank" class="comd">Commande</a> </li> 
+</ul>      
+
+    </nav>
+    </header>
+<br> <br>
+
+<div id="servicesModal" class="modal">
+    <div class="service">
+    <h2>Services:</h2>
+    <ul>
+        <li><a href="legumes.html">légumes</a></li>
+        <li><a href="plantes.html">Plantes</a></li>
+        <li><a href="poissons.html">Poissons</a></li>
+    </ul>
+
+    <ul>
+        <li><a href="pépinière.html">Pipinière</a></li>
+        <li><a href="Wakkilaré_Savon.html.html">Wakkilaré Savon</a></li>
+        <li><a href="#">Wakkilaré produits</a></li>
+    </ul>
+</div> </div>
+
+<div id="partnersModal" class="modal">
+    <div class="service">  
+    <h2>Nos partenaires:</h2>
+    <ul>
+        <li><a href="#">Partenaire 1</a></li>
+        <li><a href="#">Partenaire 2</a></li>
+        <li><a href="#">Partenaire 3</a></li>
+    </ul>
+</div> </div>
+<div id="overlay" class="overlay" onclick="closeModal()"></div>
+
+<section class="hero">
+    <div class="hero-content">
+      <h2>Bienvenue dans le monde de l'aquaponie</h2>
+      <p>Des solutions durables pour une agriculture moderne</p>
+      <p>Découvrez notre mission et notre engagement envers un avenir durable.</p>
+    </div>
+  </section>
+   <br> <br>
+
+
+<!-- <div style="padding-top: 500px; text-align:center; "> 
+    <div style="position:absolute; bottom:50%; left:20%; max-width: 50%; color:white;"> <h1>À propos de nous</h1>
+        <p>Découvrez notre mission et notre engagement envers un avenir durable.</p>  </div>
+
+</div> -->
+
+ <!-- SLIDE -->
+
+<div class="slider">
+  <div class="slides">
+      <!-- Slide 1 -->
+      <div class="slide">
+          <img src="Images/image_1.avif" alt="Image 1">
+          <div class="slide-content">
+              <h2>Notre Mission</h2>
+              <p>Transformer les déchets en ressources précieuses pour une agriculture durable.</p>
+              <a href="#" class="btn">En savoir plus</a>
+          </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+          <img src="Images/pois.avif" alt="Image 2">
+          <div class="slide-content">
+              <h2>Nos Solutions</h2>
+              <p>Produire des légumes, des plantes et des poissons grâce à l'aquaponie.</p>
+              <a href="#" class="btn">Découvrir nos produits</a>
+          </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+          <img src="Images/legumes.jpg" alt="Image 3">
+          <div class="slide-content">
+              <h2>Engagement</h2>
+              <p>Nous travaillons avec passion pour bâtir un monde plus vert.</p>
+              <a href="#" class="btn">Rejoignez-nous</a>
+          </div>
+      </div>
+  </div>
+  <!-- Navigation -->
+  <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+  <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+
+
+
+<section class="section">
+    <br> 
+    <p style="font-size:30px; color:rgb(39, 33, 33); font-weight:bold; margin-top:30px;">Bienvenue chez
+         <span>AGD </span>au coeur de la nature ! </p>
+
+    <div class="descrip">
+        <h1>Qui sommes-nous ?</h1>
+    </div>
+
+    <div class="container">
+             <p class="texte">
+<span>A</span>frica <span>G</span> lobal <span>D</span>iscover(AGD) est un programme lancé pour contribuer au developpement
+économique sur le secteur agricole en mettant en place une technique de production alimentaire appelée aquaponie.Vu la 
+rareté de certains espèces et produits, nous avons mis en place des fermes écologique pour proteger l'environnement, aider 
+les individus et les communautés à atteindre une véritable souveraineté alimentaire. Nous cultivons des légumes frais, des
+plantes de qualité et nous élevons des poissons frais issus de nos fermes. Nous produisons des aliments seins et qualitatif en 
+utilisant des déchets organiques transformés en engrais naturel. AGD organise des ventes, des foires aux planttes et aux
+espèces rare à travers le continent. Nous transformons sur place nos produits et nous les commercialisons à nos différents clients.
+ 
+ <br> </p>
+    </div>
+</section>
+
+<div>
+    <h1>Les axes</h1>
+</div>
+
+
+<section id="prog" class="prog">
+    <h2>Nos Services</h2>
+    <div class="grid">
+        <div class="card">
+            <i class="icon fas fa-graduation-cap"></i>
+            <h3>Formation</h3>   <br> <br>
+            <p>Programmes sur mesure pour développer vos compétences.</p>
+        </div>
+        <div class="card">
+            <i class="icon fas fa-lightbulb"></i>
+            <h3>Conseil</h3>    <br> <br>
+            <p>Des stratégies adaptées à vos besoins.</p>
+        </div>
+        <div class="card">
+            <i class="icon fas fa-chalkboard-teacher"></i>
+            <h3>Coaching</h3>   <br> <br>
+            <p>Accompagnement personnalisé pour atteindre vos objectifs.</p>
+        </div>
+        <div class="card">
+            <i class="icon fas fa-users"></i>
+            <h3>Équipe</h3>    <br> <br>
+            <p>Découvrez notre équipe passionnée et experte.</p>
+        </div>
+    </div>
+</section>
+
+
+    <h1 style="text-align: center; margin-bottom:5%;">  <u>Quelques chiffres </u></h1>
+
+<div class="chart-container">
+    <canvas id="aquaponieChart" width="60" height="100"></canvas>
+    <div class="legend" id="chartLegend"></div>
+  </div>
+
+
+
+<section id="about" class="about">
+    <div class="about-content">
+        <img src="image1.jpg" alt="À propos">
+        <div class="text">
+            <h2>Qui sommes-nous ?</h2>
+            <p>Une équipe dédiée à votre succès professionnel, avec une approche personnalisée.</p>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="first">          
+        <img src="logo.png" alt="logo_car" class="logocar">
+    </div>
+    <div class="second">
+        <p> Acteurs: <br>
+            AMIDI <br>
+            B.INTER <br>
+            JAM ALLO GROUPE <br>
+            SERENITY TRAVEL AGENCY
+        </p>
+    </div>
+    <div class="third">
+        <p> Réseaux sociaux:
+            </p><br>
+            <p class="net">
+                <a href="https://www.instagram.com/"class="img1" target="_blank"target="_blank"><i class="fa-brands fa-instagram" style="color:#DD2A7B;" ></i></a>
+                <a href="https://www.twitter.com" class="img2" target="_blank"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a>
+                <a href="https://www.facebook.com" class="img3"target="_blank"><i class="fa-brands fa-facebook-f" style="color: #3b5998;"></i></a>
+                <a href="https://www.youtube.com" class="img4"target="_blank"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i></a>
+            </p>
+    </div>
+
+    <div class="fourth"> 
+        <p>Contacts:<br><br>
+            +212 555-0000 <br><br>
+            Email:<br> </p>
+            <p>
+           site web: www.race.com
+            </p>
+    </div>
+    <div class="fifth"> <address> Adresse</address>
+        <p>
+            Tambacounda, Senegal
+            </p><br>
+</footer> 
+
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    //chiffres
+    const ctx = document.getElementById('aquaponieChart').getContext('2d');
+const data = {
+  labels: [
+         'Économie d\'eau', 
+         'Engrais et pesticides',
+          'Électricité',
+           'Croissance des plantes'
+           ],
+  datasets: [{
+    data: [40, 30, 20, 10], 
+    backgroundColor: [
+      'rgba(75, 192, 192, 0.6)',
+      'rgba(255, 99, 132, 0.6)',
+      'rgba(255, 205, 86, 0.6)',
+      'rgba(153, 102, 255, 0.6)'
+    ],
+    borderColor: [
+      'rgba(75, 192, 192, 1)',
+      'rgba(255, 99, 132, 1)',
+      'rgba(255, 205, 86, 1)',
+      'rgba(153, 102, 255, 1)'
+    ],
+    borderWidth: 2
+  }]
+};
+
+
+    const chart = new Chart(ctx, {
+      type: 'pie',
+      data: data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false // Masquer la légende par défaut de Chart.js
+          },
+          tooltip: {
+            enabled: true
+          }
+        }
+      }
+    });
+
+    // Générer une légende personnalisée
+    const legendContainer = document.getElementById('chartLegend');
+    const labels = data.labels;
+    const colors = data.datasets[0].backgroundColor;
+
+    labels.forEach((label, index) => {
+      const legendItem = document.createElement('div');
+      legendItem.classList.add('legend-item');
+
+      const colorBox = document.createElement('div');
+      colorBox.classList.add('legend-color');
+      colorBox.style.backgroundColor = colors[index];
+
+      const labelText = document.createElement('span');
+      labelText.textContent = label;
+
+      legendItem.appendChild(colorBox);
+      legendItem.appendChild(labelText);
+      legendContainer.appendChild(legendItem);
+    });
+  
+ 
+/* Modal*/
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+}
+
+function closeModal() {
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.style.display = 'none';
+    });
+    document.getElementById('overlay').style.display = 'none';
+}
+
+    /* SLIDE*/
+  let currentSlide = 0;
+
+  // Fonction pour changer de diapositive
+  function changeSlide(direction = 1) {
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+  
+      // Masquer la diapositive actuelle
+      slides[currentSlide].style.display = 'none';
+  
+      // Calculer l'index de la nouvelle diapositive
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+  
+      // Afficher la nouvelle diapositive
+      slides[currentSlide].style.display = 'block';
+  }
+  
+  // Fonction pour démarrer le défilement automatique
+  function startAutoSlide() {
+      setInterval(() => {
+          changeSlide(1); // Passer à la diapositive suivante
+      }, 5000); // Tous les 5 secondes
+  }
+  
+  // Initialiser le slider au chargement de la page
+  document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide');
+      slides.forEach((slide, index) => {
+          slide.style.display = index === 0 ? 'block' : 'none';
+      });
+  
+      startAutoSlide(); // Lancer le défilement automatique
+  });
+  
+
+  
+</script> 
+</body>
+</html>
+
+<!-- 
+
+<script> function toggleMenu() {
+    const menu=document.getElementById("menu");
+    menu.style.display=menu.style.display==="flex";
+} -->
+
