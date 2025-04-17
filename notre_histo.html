@@ -22,41 +22,36 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif; 
 }
-
-    /* header */ 
   
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 3;
-      width: 100%;
-      height: 7rem;
-      display: flex;
-     justify-content: center; 
-     align-items: center; 
-      background: white;
-      box-shadow: 0 0 25px skyblue;
-    }
+header{
+     position: fixed;
+     height: 100px;
+     width: 100%;
+     background: transparent;
+     transition: all 0.5s ease-out;
+     text-align: center;
+            display: flex;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000; 
+                  
+        }
     
         body {
-         font-family: Arial, sans-serif; 
+          font-family: Arial, sans-serif; 
           color: #333;
           line-height: 1.6;
-          background-color: #f4f4f9;
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-    
-    /* Navbar */
+        
+    /* Navbar 
     .navbar {
       display: flex;
       justify-content: space-between;
-      /*align-items: center; */
+      /*align-items: center; *
       max-width: 1200px;
       width: 100%;
-    /*  padding: 0 10px; */
     }
     .logo{
       margin-left:5px ;
@@ -64,19 +59,19 @@
     .navbar img {  
       width: 350px;
      max-width: 300px;  
-     object-fit: contain; /* l'image garde ses proportions */
+     object-fit: contain; /* l'image garde ses proportions *
     }
-    /* Cacher le menu toggle sur les grands écrans */
+    /* Cacher le menu toggle sur les grands écrans *
     .navbar input#menu-toggler {
       display: none;
     }
     
-    /* Menu hamburger (icon) */
+    /* Menu hamburger (icon) *
     .navbar #hamburger-btn {
-      display: none; /* Cacher le bouton hamburger sur grand écran */
+      display: none; /* Cacher le bouton hamburger sur grand écran *
       cursor: pointer;
     }
-    /* Liens du menu */
+    /* Liens du menu *
     .navbar .all-links {
       display: flex;
       align-items: center;
@@ -91,13 +86,109 @@
       color: black;
       font-size: 1.1rem;
       } 
-  
+      */
+      header nav ul {
+           
+           height: 100%;
+           width: 100%;
+           list-style-type: none;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           margin-left: 35%;
+           text-indent: 20px;
+      }
+      .logo{
+       width: 60px;
+      }
+      .logo img{
+            margin-left: 40px;
+            width: 80%;
+            height: 70%;
+        }
 
-   
+        nav ul li a{
+            color: black;
+            text-decoration: none;
+            font-size: 24px;
+            margin-left: 15px;
+           /* padding: 5px 10px;*/
+        }
+        ul li a:hover{
+            background-color:rgb(184, 216, 241);
+            color:#007bff;
+            border-radius: 5px;
+            transition: all ease 0.3s;
+        }
+        @keyframes clignoter {
+            0% {opacity: 1;}
+            50% {opacity: 0;}
+            100% {opacity: 1;}
+            }
+        .clignotant{
+            animation: clignoter 3s infinite;
+            color: rgb(96, 140, 223);
+            font-size: large;
+            justify-content: left;
+            margin-left: 45px;
+        }
+
+         /* fenetre Modal */
+         .modal {
+            position: fixed;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            display: none;
+            z-index: 1000;
+        }
+        .modal h2 {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .modal ul {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 40px;
+        }
+        .modal ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1em;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .modal ul li a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .service{
+            display: flex;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            
+        }
+      
 .main {
- /* height: 10%; */
   width: 60%;
-  margin-top: 120px;
+  margin-top: 60px;
   
 }
 
@@ -228,67 +319,68 @@ p {
 
 #historique{
   margin-top: 6%;
+  box-shadow: 0px 4px 10px #37afdf;
 }
 #mission_vision{
   display: flex;
   justify-content: space-between;
   margin-top:6%;
-  
+  box-shadow: 0px 4px 10px #37afdf;
+  border-radius: 8px;
 }
 .mission{
   display: block;
   margin-right: 60px;
+  border-radius: 8px;
 }
 
 .vission{
   display: block;
 }
 
-#equipe{
-  margin-top: 6%;
-}
 
- /* Carousel Styles */
-
- .carousel-container {
-  overflow: hidden;
-  width: 100%;
-  max-width: 800px;
-  margin: 30px 0;
-  position: relative;
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-}
-
-.carousel {
-  display: flex;
-  gap: 20px; /* Espacement de 20px entre chaque image */
-  animation: scroll 15s linear infinite;
-}
-
-.carousel-item {
-  min-width: 200px; /* Taille fixe pour chaque image */
-  flex: 0 0 auto;
-  text-align: center;
-}
-.carousel-item img {
-  width: 180px; /* Fixe la largeur de toutes les images */
-  height: 250px; /* Fixe la hauteur de toutes les images */
-  object-fit: cover; /* Ajuste l'image pour remplir le cadre sans déformation */
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 8px; /* Espacement entre l'image et le texte */
-}
-
-.carousel-item p {
-  font-size: 0.9em;
-  color: #777;
-  font-style: italic;
-  margin-top: 0;
-}
+  /* Carousel Styles */
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    margin: 30px 0;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 40px; /* Espacement entre chaque image */
+    animation: scroll 15s linear infinite;
+    width: 100%;
+  }
+  
+  .carousel-item {
+    min-width: 200px; /* Taille fixe pour chaque image */
+    flex: 0 0 auto;
+    text-align: center;
+  }
+  
+  .carousel-item img {
+    width: 180px; 
+    height: 250px;
+    object-fit: cover; /* Ajuste l'image pour remplir le cadre sans déformation */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px; /* Espacement entre l'image et le texte */
+  }
+  
+  .carousel-item p {
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+    margin-top: 0;
+  }
+  
   /* Animation de défilement */
   @keyframes scroll {
     0% {
@@ -300,197 +392,116 @@ p {
   }
 
 
-  /* footer */
 
+  /* footer */
   footer{
-    position: relative;
-    bottom: 0px;
     width: 100%;
-    background: skyblue;
-    margin-top: 70px;
-  }
-  .main-content{
+    
+    background-color:rgb(88, 156, 224);
+    color: white; 
+    display:flex;
+            padding-top:50px;
+            font-size:15px;
+            align-content: center;
+            margin-top: 80px;
+        }
+
+        footer div{
+        padding:24px;
+
+    }
+        
+    .net a{
+        margin :17px;
+        height:100px;
+        font-size:20px;
+        color: white;
+    }
+    .social-icons {
     display: flex;
-  }
-  .main-content .box{
-    flex-basis: 50%;
-    padding: 10px 20px;
-  }
-  .box h2{
-    font-size: 1.125rem;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  .box .content{
-    margin: 20px 0 0 0;
-    position: relative;
-  }
-  .box .content:before{
-    position: absolute;
-    content: '';
-    top: -10px;
-    height: 2px;
-    width: 100%;
-    background: white;
-  }
-  .box .content:after{
-    position: absolute;
-    content: '';
-    height: 2px;
-    width: 15%;
-    background: gray;
-    top: -10px;
-  }
-  .left .content p{
-    text-align: justify;
-  }
-  .left .content .social{
-    margin: 20px 0 0 0;
-  }
-  .left .content .social a{
-    padding: 0 2px;
-  }
-  .left .content .social a span{
-    height: 40px;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
-    background: white;
-    line-height: 40px;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: 0.3s;
-    margin-top: 30px;
-  }
-  .left .content .social a span:hover{
-    background: #f12020;
-  }
-  .center .content .fas{
-    font-size: 1.4375rem;
-    background: white;
-    height: 45px;
-    width: 45px;
-    line-height: 45px;
-    text-align: center;
-    border-radius: 50%;
-    transition: 0.3s;
-    cursor: pointer;
-  }
-  .center .content .fas:hover{
-    background: #f12020;
-  }
-  .center .content .text{
-    font-size: 1.0625rem;
-    font-weight: 500;
-    padding-left: 10px;
-  }
-  .center .content .phone{
-    margin: 15px 0;
-  }
-  .right form .text{
-    font-size: 1.0625rem;
-    margin-bottom: 2px;
-    color: #656565;
-  }
-  .right form .msg{
-    margin-top: 10px;
-  }
-  .right form input, .right form textarea{
-    width: 100%;
-    font-size: 1.0625rem;
-    background: white;
-    padding-left: 10px;
-    border: 1px solid #222222;
-  }
-  .right form input:focus,
-  .right form textarea:focus{
-    outline-color: #3498db;
-  }
-  .right form input{
-    height: 35px;
-  }
-  .right form .btn{
-    margin-top: 10px;
-  }
-  .right form .btn button{
     height: 40px;
-    width: 100%;
-    border: none;
-    outline: none;
-    background: gray;
-    font-size: 1.0625rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: .3s;
-  }
-  .right form .btn button:hover{
-    background: #000;
-  }
-  .bottom center{
-    padding: 5px;
-    font-size: 0.9375rem;
-    background: skyblue;
-  }
-  .bottom center span{
-    color: white;
-  }
-  .bottom center a{
-    color: skyblue;
-    text-decoration: none;
-  }
-  .bottom center a:hover{
-    text-decoration: underline;
-  }
-  @media screen and (max-width: 900px) {
-    footer{
-      position: relative;
-      bottom: 0px;
-    }
-    .main-content{
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
-    .main-content .box{
-      margin: 5px 0;
-    }  
-  
-  
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    margin-left: 2px;
+}
+
+.social-icons .fa-instagram { background-color: #DD2A7B; }
+.social-icons .fa-twitter { background-color: #1DA1F2; }
+.social-icons .fa-facebook-f { background-color: #3b5998; }
+.social-icons .fa-youtube { background-color: #FF0000; }
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
   </style>
   <body>
 
     <header>
-      <nav class="navbar">
-        <div class="logo">
-          <img src="LOGO LAMERGO (1).svg" alt="" ">
-        </div>
-          
-          <input type="checkbox" id="menu-toggler">
-          <label for="menu-toggler" id="hamburger-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
-                  <path d="M0 0h24v24H0z" fill="none"/>
-                  <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
-              </svg>
-          </label>
-          <ul class="all-links">
-              <li><a href="#home" style="color: black;">A propos</a></li>
-              <li><a href="#services" style="color: black;">Services</a></li>
-              <li><a href="#portfolio" style="color: black;">Formations</a></li>
-              <li><a href="#about" style="color: black;">Blog/Actualites</a></li>
-              <li><a href="#about" style="color: black;">Carrieres</a></li>
-  
-              <li><a href="#contact" style="color: black;">Contactez-nous</a></li>
-          </ul>
-      </nav>
-      </header>
+      <div class="logo">
+        <img src="Images/logo-nature.avif" alt="logo"> 
+        <h2 class="clignotant">AGD </h2>
+    </div>  
+    
+        <nav>
+            <ul>
+     <li><a href="#accueil.html" target="_blank"> <i class="fa-solid fa-house" style="color: #e7e5e5;"></i> Accueil </a></li>
+    <li> <a href="notre_histo.html" target="_blank"> A propos</a> </li>
 
+    <li><a href="#" onclick="openModal('servicesModal')">Services</a></li>
+    <li><a href="#" onclick="openModal('partnersModal')">Nos partenaires</a></li> 
+    <li> <a href="commande.html" target="_blank" class="comd">Commande</a> </li> 
+</ul>      
+
+    </nav>
+    </header>
+<br> <br>
+
+<div id="servicesModal" class="modal">
+    <div class="service">
+    <h2>Services:</h2>
+    <ul>
+        <li><a href="legumes.html">légumes</a></li>
+        <li><a href="plantes.html">Plantes</a></li>
+        <li><a href="poissons.html">Poissons</a></li>
+    </ul>
+
+    <ul>
+        <li><a href="pépinière.html">Pipinière</a></li>
+        <li><a href="Wakkilaré_Savon.html.html">Wakkilaré Savon</a></li>
+        <li><a href="#">Wakkilaré produits</a></li>
+    </ul>
+</div> </div>
+
+<div id="partnersModal" class="modal">
+    <div class="service">  
+    <h2>Nos partenaires:</h2>
+    <ul>
+        <li><a href="#">Partenaire 1</a></li>
+        <li><a href="#">Partenaire 2</a></li>
+        <li><a href="#">Partenaire 3</a></li>
+    </ul>
+</div> </div>
+<div id="overlay" class="overlay" onclick="closeModal()"></div>
 
     <section class="main swiper mySwiper">
       <div class="wrapper swiper-wrapper">
         <div class="slide swiper-slide">
           <img src="img_Ar.jpg" alt="" width="800px" height="650px">
           <div class="image-data">
-            <!-- <span class="text"> </span> -->
-            <h2>
-              Africa Global Discovery<br />  </h2>
+
+            <h2> Africa Global Discovery<br />  </h2>
             <a href="#historique" class="button">A propos</a>
           </div>
         </div>
@@ -498,7 +509,7 @@ p {
           <img src="prog.jpg" alt="" width="900px">
 
           <div class="image-data">
-           <!-- <h2>  Historique</h2>  -->
+           <h2>  Historique</h2>  
       <span class="text"> Nous sommes ravis de vous accueillir sur le site AGD, un acteur innovant dans les domaines de la technologie, de l’éducation et des services.
       </span>
             <br>
@@ -509,12 +520,13 @@ p {
           <!-- <img src="https://th.bing.com/th/id/OIP.Z5doBi_GrQv0keWGhmUrFwHaFj?w=278&h=209&c=7&r=0&o=5&pid=1.7" alt="" class="image" /> -->
           <img src="tc.avif" alt="" width="900px">
           <div class="image-data">
-            <!-- <span class="text"> </span> -->
+            <span class="text">  Découvrez notre mission et notre engagement envers un avenir durable.</span> <br>
             <!-- <h2> </h2> -->
             <a href="#historique" class="button">A propos</a>
           </div>
         </div>
       </div>
+
       <div class="swiper-button-next nav-btn"></div>
       <div class="swiper-button-prev nav-btn"></div>
       <div class="swiper-pagination"></div>
@@ -523,12 +535,10 @@ p {
     
     <section id="historique" class="fade-in">
 <h2>Historique</h2>
-<p style="  font-family: Arial, sans-serif; ">   Lamergo Group a été créé avec la vision de fournir des solutions innovantes dans des secteurs essentiels tels que la 
-            technologie, l’éducation et les services. Depuis sa fondation, l'entreprise a élargi son offre en proposant des
-             formations spécialisées en ligne, une agence de voyage pour organiser vos déplacements, ainsi que des services de
-              design graphique pour améliorer l'identité visuelle des entreprises. Aujourd'hui, Lamergo Group continue d'évoluer, 
-              en mettant l'accent sur l'innovation et la durabilité, tout en créant de la valeur pour ses clients et partenaires.
-    </p>
+<p style="  font-family: Arial, sans-serif; "> Lancé le 23 aout 2023 le programme AFRICA GLOBAL DISCOVERY (AGD) a été initié par 4 acteurs au développement à savoir : AMIDI, B.INTER , JAMM ALLO GROUPE & SERENITY TRAVEL AGENCY .
+  AGD rassemble au sein de ses comités de promotion, des représentants des pouvoirs publics, des associations de migrants, des représentants de parti politique,
+  des collectivités territoriales des associations internationales, des organismes professionnels des entreprises des ONG etc.
+</p>
   
     </section>
       
@@ -536,92 +546,46 @@ p {
   <section id="mission_vision" class="fade-in">
     <div class="mission">
       <h2>Notre Mission</h2>
-      <p>Notre mission est de concevoir et de proposer des solutions innovantes qui améliorent le quotidien de nos clients et partenaires. En intégrant les dernières avancées technologiques et en répondant aux besoins spécifiques de chaque utilisateur, nous visons à simplifier et enrichir leur expérience. Nous nous engageons également à générer une réel
-          le valeur ajoutée pour la société en contribuant à un impact positif et durable dans chaque projet que nous entreprenons..</p>
+      <p>Notre mission est de concevoir et de proposer des solutions innovantes qui améliorent le quotidien de nos clients et partenaires.
+        Pour mieux réussir la promotion de ses activités l’AGD a prévu l’implantation de plusieurs des sociétés coopératives sous forme de réseau et l’organisation d’activités contribuant à la protection de l’environnement,des espèces rares et à la souveraineté alimentaire...</p>
     </div>
    
   
 <div>
   <h2>Notre Vision</h2>
-  <p>Notre vision est de devenir un acteur de référence et un pionnier dans les domaines de la technologie et des services. Nous aspirons à façonner l'avenir en plaçant la créativité, l'efficacité et la responsabilité sociale au coeur de notre démarche. À travers notre engagement pour l’innovation et le développement durable, nous souhaitons
-       inspirer le changement et accompagner nos clients et partenaires vers un monde plus connecté, responsable et performant</p>
+  <p>Notre vision est de devenir un acteur de référence et un pionnier dans les domaines de la technologie et des 
+    services. Nous aspirons à façonner l'avenir en plaçant la créativité, l'efficacité et la responsabilité sociale au
+     coeur de notre démarche. À travers notre engagement pour l’innovation et le développement durable, nous souhaitons 
+         inspirer le changement et accompagner nos clients et partenaires vers un monde plus connecté, responsable et performant</p>
 </div>
    
   </section>
 
-<!-- EQUIPE -->
 
-<section id="equipe" class="fade-in">
-  <h2>L'équipe dirigeante</h2>
-  <!-- Carrousel d'images -->
+
+  <!-- Membres -->
+<h2 style="margin-top: 6%;">L'équipe dirigeante</h2>
   <div class="carousel-container">
     <div class="carousel">
       <div class="carousel-item">
-        <img src="IMG-20221124-WA0016.jpg" alt="Image 1">
-        <h3>nom_membre</h3>
-        <p>Description_membre</p>
-      </div>
-      <div class="carousel-item">
-        <img src="IMG-20221124-WA0016.jpg" alt="Image 2">
-        <h3>nom_membre</h3>
-        <p>Description_membre </p>
-      </div>
-
-      <div class="carousel-item">
-        <img src="IMG-20221124-WA0016.jpg" alt="Image 3">
-        <h3>nom_membre</h3>
-        <p>Description_membre</p>
-      </div>
-
-      <div class="carousel-item">
-        <img src="PSN_8560 copie.jpg" alt="Image 3">
-        <h3>nom_membre</h3>
-        <p>Description_membre 4</p>
-      </div>
-
-      <div class="carousel-item">
-        <img src="PSN_8560 copie.jpg" alt="Image 3">
-        <h3>nom_membre</h3>
-        <p>Description de l'image 4</p>
-      </div>
-
-
-      <div class="carousel-item">
-        <img src="PSN_8560 copie.jpg" alt="Image 3">
-        <h3>nom_membre</h3>
-        <p>Description de l'image 4</p>
-      </div>
-
-    </div>
-  </div>
-</section>
- 
-
-// membres nv 
-
-
-<h2 style="margin-left: 280px;">L'équipe dirigeante</h2>
-  <div class="carousel-container">
-    <div class="carousel">
-      <div class="carousel-item">
-        <img src="IMG-20221124-WA0016.jpg" alt="Image 1">
+        <img src="Images/acacia.png" alt="Image 1">
         <h3>nom_membre</h3>
         <p>Description image 1</p>
       </div>
       <div class="carousel-item">
-        <img src="IMG-20221124-WA0016.jpg" alt="Image 2">
+        <img src="Images/aubergine.png" alt="Image 2">
         <h3>nom_membre</h3>
         <p>Description image 2</p>
       </div>
 
       <div class="carousel-item">
-        <img src="IMG-20221124-WA0016.jpg" alt="Image 3">
+        <img src="Images/ferme.jpg" alt="Image 3">
         <h3>nom_membre</h3>
         <p>Description image 3</p>
       </div>
 
       <div class="carousel-item">
-        <img src="PSN_8560 copie.jpg" alt="Image 3">
+        <img src="Images/bg.avif" alt="Image 3">
         <h3>nom_membre</h3>
         <p>Description de l'image 4</p>
       </div>
@@ -634,7 +598,7 @@ p {
 
 
       <div class="carousel-item">
-        <img src="PSN_8560 copie.jpg" alt="Image 3">
+        <img src="Images/bol-chocolats.avif" alt="Image 3">
         <h3>nom_membre</h3>
         <p>Description de l'image 4</p>
       </div>
@@ -645,71 +609,65 @@ p {
 
 
 
-<footer>
-  <div class="main-content">
-    <div class="left box">
-      <h2>A propos</h2>
-       <div class="content">
-        <!-- <p>Lamergo Group est un groupe diversifié intervenant dans de multiples secteurs, incluant les 
-technologies, la formation, les services aux entreprises, le développement durable, la santé, et bien 
-d'autres. L'objectif est de renforcer la présence digitale de l'entreprise et de promouvoir ses services.</p> -->
-        <div class="social">
-          <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
-          <a href="#"><span class="fab fa-twitter"></span></a>
-          <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
-          <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
-        </div>
-      </div>
+  <footer>
+    <div class="first">          
+        <img src="logo.png" alt="logo_car" class="logocar">
     </div>
-    <div class="center box">
-      <h2>Addresse</h2>
-      <div class="content">
-        <div class="place">
-          <span class="fas fa-map-marker-alt"></span>
-          <span class="text">Casablanca Hay Mourad Maroc </span>
-        </div>
-        <div class="phone">
-          <span class="fas fa-phone-alt"></span>
-          <span class="text">+212 629482958 </span>
-        </div>
-        <div class="email">
-          <span class="fas fa-envelope"></span>
-          <span class="text">lamergogroup@gmail.com</span>
-        </div>
-      </div>
+    <div class="second">
+        <h2 class="text-lg text-white-500"> Acteurs: </h2>
+        <p style="color: white;"> AMIDI <br>
+            B.INTER <br>
+            JAM ALLO GROUPE <br>
+            SERENITY TRAVEL AGENCY
+        </p>
     </div>
-    <div class="right box">
-      <h2>Contactez-nous </h2>
-      <div class="content">
-        <form action="#">
-          <div class="email">
-            <div class="text">Email *</div>
-            <input type="email" required>
-          </div>
-          <div class="msg">
-            <div class="text">Message *</div>
-            <textarea rows="2" cols="25" required></textarea>
-          </div>
-          <div class="btn"style="color: #000;">
-            <button type="submit" style="color: white;">Send</button>
-          </div>
-        </form>
-      </div>
+    <div class="third">
+        <h2 class="text-lg"> Réseaux sociaux: </h2>
+            <p class="net">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/lamergo_group/profilecard/?igsh=MXRvdWFte TEObGY waQ==" target="_blank" class="fa-brands fa-instagram"></a>
+                    <a href="https://www.twitter.com" target="_blank" class="fa-brands fa-twitter"></a>
+                    <a href="https://www.facebook.com" target="_blank" class="fa-brands fa-facebook-f"></a>
+                    <a href="https://www.youtube.com" target="_blank" class="fa-brands fa-youtube"></a>
+                  </div>
+        
+            </p>
     </div>
-  </div>
-  <div class="bottom" style="color: skyblue;">
-    <center>
-      <span class="credit">Created By <a href="" style="color: black;">Mergo Group</a> | </span>
-      <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
-    </center>
-  </div>
-    </footer>    
+
+    <div class="fourth"> 
+        <h2 class="text-lg text-white-500">Contacts: </h2>
+       <p style="color:white";>  +212 555-0000 <br>
+            Email: AquapoAGD@gmail.com<br> 
+           site web: www.race.com
+            </p>
+    </div>
+    <div class="fifth"> <address class="text-lg"> Adresse</address>
+        <p style="color:white";> Tambacounda, Senegal </p><br>
+     </div>
+</footer> 
+  
 
 
      <!-- Swiper JS -->
      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-     <!-- Initialize Swiper -->
+
+     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+
      <script>
+ /* fenetre Modal*/
+ function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+}
+
+function closeModal() {
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.style.display = 'none';
+    });
+    document.getElementById('overlay').style.display = 'none';
+}
+
+/* Initialize Swiper */
        var swiper = new Swiper(".mySwiper", {
          slidesPerView: 1,
          loop: true,
@@ -722,15 +680,14 @@ d'autres. L'objectif est de renforcer la présence digitale de l'entreprise et d
            prevEl: ".swiper-button-prev",
          },
          autoplay: {
-           delay: 3000, // Délai en millisecondes entre chaque slide (ici 3 secondes)
+           delay: 4000, // Délai en millisecondes entre chaque slide (ici 3 secondes)
            disableOnInteraction: false, // Continue à défiler même si l'utilisateur interagit avec les boutons de navigation
          },
        });
 
 
-       // EQUIPE 
-
-       document.addEventListener("DOMContentLoaded", () => {
+/*carousel membres */
+document.addEventListener("DOMContentLoaded", () => {
         const sections = document.querySelectorAll("section");
       
         const revealSection = () => {
@@ -743,8 +700,8 @@ d'autres. L'objectif est de renforcer la présence digitale de l'entreprise et d
         };
       
         window.addEventListener("scroll", revealSection);
-      
-        // Carousel functionality
+
+      // Carousel functionality
         const carousel = document.querySelector(".carousel");
         let index = 0;
         const items = document.querySelectorAll(".carousel-item");
@@ -759,7 +716,6 @@ d'autres. L'objectif est de renforcer la présence digitale de l'entreprise et d
       
         setInterval(slideCarousel, 3000);
       });
-      
      </script>
      
   </body>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <style>
+    body {
+      background-image: url('/arriereP.avif');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh; 
+      padding-top: 100px; 
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100px;
+      background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 18px;
+      color: whitesmoke;
+      padding: 13px 18px;
+      transition: background 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: #ddd;
+      border-radius: 5px;
+    }
+
+    nav ul li button {
+      background: green;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    nav ul li button a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul li button:hover {
+      background: darkgreen;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .elmt {
+      padding: 20px;
+      border: 1px solid #ddd;
+      background-color: rgba(0, 0, 0, 0.5); 
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      color: white;
+    }
+
+    .navigation-menu {
+      padding: 0;
+      margin: 0;
+    }
+
+    .navigation-menu .list-group-item {
+      margin-bottom: 20px;
+      border: none;
+      background-color: white;
+      transition: background-color 0.5s ease;
+      list-style-type: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .navigation-menu .list-group-item a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+    }
+
+    .navigation-menu .list-group-item a:hover {
+      color: #32d823;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <span style="color: aliceblue;">Foot</span>
+      <span style="color: green;">Space</span>
+      <span style="color: aliceblue;">Reserve</span>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="adm.html">Administrateur</a></li>
+        <li><a href="gestion.html">Gestionnaire</a></li>
+        <li><a href="/Inscription">Inscription</a></li>
+        <li><button><a href="connexion.html">Se connecter</a></button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="elmt">
+      <h1 style="margin-bottom: 15px; margin-top: 50px; font-weight: bold;">Administrateur</h1>
+      <ul class="list-group navigation-menu">
+        <li class="list-group-item"><a href="administrateur.html">Gestion des utilisateurs</a></li>
+        <li class="list-group-item"><a href="gestion_terrain.html">Gestion de terrain</a></li>
+        <li class="list-group-item"><a href="connexion.html">Connexion</a></li>
+        <li class="list-group-item"><a href="statistique.html">Statistique</a></li>
+        <li class="list-group-item"><a href="#">Rapport</a></li>
+        <li class="list-group-item"><a href="#">Consulter réservation</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
