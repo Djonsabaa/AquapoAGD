@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"  
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
     <title> Nos Poissons </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -14,51 +17,68 @@
             font-size: 18px;
         }
         body{
-            background-image: url('Images/scleropages.jpg');
+           
         }
 
         header{
-            position: fixed;
-            height: 100px;
+     position: fixed;
+     height: 100px;
+     width: 100%;
+     background: transparent;
+     transition: all 0.5s ease-out;
+     text-align: center;
+            display: flex;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000; 
+                  
+        }
+        header nav ul {
+           
+            height: 100%;
             width: 100%;
-            background-color: transparent;
-                transition: all 0.5s ease-out;
-                text-align: center;
-                display: flex;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                z-index: 1000;    
-                font-size: 18px;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 35%;
+            text-indent: 20px;
+       }
+       .logo{
+        width: 60px;
+       }
+        .logo img{
+            margin-left: 40px;
+            width: 80%;
+            height: 70%;
+        }
+        nav ul li a{
+            color: black;
+            text-decoration: none;
+            font-size: 24px;
+            margin-left: 15px;
+           /* padding: 5px 10px;*/
+        }
+        ul li a:hover{
+            background-color:rgb(184, 216, 241);
+            color:#007bff;
+            border-radius: 5px;
+            transition: all ease 0.3s;
+        }
+        
+        
+         @keyframes clignoter {
+            0% {opacity: 1;}
+            50% {opacity: 0;}
+            100% {opacity: 1;}
             }
-            header nav ul {
-                height: 100%;
-                width: 100%;
-                list-style-type: none;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-right: 40px;
-                text-indent: 20px;
-              
-            }
-             .log img{
-                width: 90px;
-                height: 100px;
-                margin-right: 170px;
-            }
-            nav ul li a{
-                text-decoration: none;
-               color: white;
-                font-size: 18px;
-               /* padding: 5px 10px;*/
-            }
-            ul li a:hover{
-                background-color:white;
-                color:#fd7e14;
-                border-radius: 5px;
-                transition: all ease 0.4s;
-            
-                
-            }
+        .clignotant{
+            animation: clignoter 3s infinite;
+            color: rgb(96, 140, 223);
+            font-size: large;
+            justify-content: left;
+            margin-left: 45px;
+        }
+
              /* fenetre Modal */
       .modal {
         position: fixed;
@@ -120,7 +140,7 @@
         .poisson-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: rgb(19, 194, 71);
+
         }
         .poisson-image {
             width: 100%;
@@ -129,6 +149,19 @@
             border-top-left-radius: 0.5rem;
             border-top-right-radius: 0.5rem;
         }
+        .commander{
+    border:1px solid wheat;
+    background-color:#007bff;
+    color: white;
+    border-radius: 5px;
+    padding:12px;
+    font-size:16px;
+    font-weight:700;
+    text-decoration:none;
+}
+.commander:hover{
+    background-color: rgb(72, 126, 177);
+}
 
         footer{
             border-bottom-color: white;
@@ -141,90 +174,99 @@
             margin-top: 80px;
         }
     footer div{
-        padding:20px;
+        padding:24px;
 
     }
-    .img1:hover{
-        border-radius:0px;
-        font-size:25px;
-        border:0px ;
-        transform-style:preserve-3d;
-        transition: all ease 0.2s;
-        border-bottom:3px solid #DD2A7B;
-    }.img2:hover{
-        
-        
     
-        border:0px ;transition: all ease 0.2s;
-        font-size:25px;border-bottom:3px solid #1DA1F2;
-    }.img3:hover{
-        border:0px ;transition: all ease 0.2s;
-        font-size:25px;
-        border-bottom:3px solid #3b5998;
-    }.img4:hover{
-    
-        font-size:25px;
-        border:0px ;transition: all ease 0.2s;
-        border-bottom:3px solid #FF0000;
-    }
+        
     .net a{
-        margin :20px;
+        margin :17px;
+        
         height:100px;
         font-size:20px;
-        font-size:20px;
-        color: #fd7e14;
+        
     }
+    .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    margin-left: 2px;
+}
+
+.social-icons .fa-instagram { background-color: #DD2A7B; }
+.social-icons .fa-twitter { background-color: #1DA1F2; }
+.social-icons .fa-facebook-f { background-color: #3b5998; }
+.social-icons .fa-youtube { background-color: #FF0000; }
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
     </style>
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
-        <header>
-            <div class="log">
-                <img src="Images/logo-nature.avif" alt="">
-            </div>
-            <nav>
-                <ul>
-         <li><a href="#accueil.html" target="_blank"> <i class="fa-solid fa-house" style="color: #e7e5e5;"></i> Accueil </a></li>
-        <li> <a href="A propos.html" target="_blank"> A propos</a> </li>
-        
-        <li><a href="#" onclick="openModal('servicesModal')">Services</a></li>
-                    <li><a href="#" onclick="openModal('partnersModal')">Nos partenaires</a></li>
-        <li> <a href="Actualités.html" target="_blank">Publicités</a> </li> 
-        <li> <a href="commande.html" target="_blank" class="comd">Commande</a> </li> 
-        </ul>      
-        </nav>
-        </header>
-        <div id="servicesModal" class="modal">
-            <div class="service">
-            <h2>Services:</h2>
-            <ul>
-                <li><a href="plantes.html">Plantes</a></li>
-                <li><a href="legumes.html">légumes</a></li>
-                <li><a href="poissons.html">Poissons</a></li>
-            </ul>
-          
-            <ul>
-                <li><a href="#">service4</a></li>
-                <li><a href="#">service5</a></li>
-                <li><a href="#">service6</a></li>
-            </ul>
-          </div> </div>
-          
-          <div id="partnersModal" class="modal">
-              <div class="service">
-                  <h2>Nos partenaires</h2>
-                  <ul>
-                      <li><a href="#">Partenaire 1</a></li>
-                      <li><a href="#">Partenaire 2</a></li>
-                      <li><a href="#">Partenaire 3</a></li>
-                  </ul>
-                </div>
-              </div>
-           
-          <div id="overlay" class="overlay" onclick="closeModal()"></div>
+    <header>
+        <div class="logo">
+          <img src="Images/logo-nature.avif" alt="logo"> 
+          <h2 class="clignotant">AGD </h2>
+      </div>  
       
+          <nav>
+              <ul>
+       <li><a href="#accueil.html" target="_blank"> <i class="fa-solid fa-house" style="color: #e7e5e5;"></i> Accueil </a></li>
+      <li> <a href="notre_histo.html" target="_blank"> A propos</a> </li>
+  
+      <li><a href="#" onclick="openModal('servicesModal')">Services</a></li>
+      <li><a href="#" onclick="openModal('partnersModal')">Nos partenaires</a></li> 
+      <li> <a href="commande.html" target="_blank" class="comd">Commande</a> </li> 
+  </ul>      
+  
+      </nav>
+      </header>
+  <br> <br>
+  
+  <div id="servicesModal" class="modal">
+      <div class="service">
+      <h2>Services:</h2>
+      <ul>
+          <li><a href="legumes.html">légumes</a></li>
+          <li><a href="plantes.html">Plantes</a></li>
+          <li><a href="poissons.html">Poissons</a></li>
+      </ul>
+  
+      <ul>
+          <li><a href="pépinière.html">Pipinière</a></li>
+          <li><a href="Wakkilaré_Savon.html.html">Wakkilaré Savon</a></li>
+          <li><a href="#">Wakkilaré produits</a></li>
+      </ul>
+  </div> </div>
+  
+  <div id="partnersModal" class="modal">
+      <div class="service">  
+      <h2>Nos partenaires:</h2>
+      <ul>
+          <li><a href="#">Partenaire 1</a></li>
+          <li><a href="#">Partenaire 2</a></li>
+          <li><a href="#">Partenaire 3</a></li>
+      </ul>
+  </div> </div>
+  <div id="overlay" class="overlay" onclick="closeModal()"></div>
+  
 
 
-    <main class="flex-grow container mx-auto px-4 py-8 shadow-lg">
+    <main class="flex-grow container mx-auto px-5 py-8 shadow-lg">
         <h1 class="text-3xl font-bold mb-6 text-center mt-24">Nos Poissons d'Aquaponie</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <article class="poisson-card">
@@ -232,81 +274,28 @@
                 <div class="p-4">
                     <h2 class="text-xl font-semibold mb-2">Tilapia</h2>
                     <p class="text-gray-600 mb-4">Faites le choix de la fraîcheur et de l’écologie avec notre tilapia, élevé en aquaponie, sans produits chimiques ni antibiotiques.</p>
-                        <!-- Le tilapia est l'un des poissons les plus populaires en aquaponie. Résistant, il s'adapte bien à différentes conditions et croît rapidement. -->
-                    <ul class="text-sm text-gray-600 mb-4">
-                        <li><strong>Taille adulte :</strong> 20-30 cm</li>
-                        <!-- <li><strong>Température idéale :</strong> 21-32°C</li>
-                        <li><strong>pH optimal :</strong> 6.5-8.5</li> -->
-                    </ul>
-                    <a href="poisson-tilapia.html" class="text-blue-600 hover:underline">En savoir plus</a>
+                    <a href="" class="commander">Commander</a> 
                 </div>
             </article>
-            <!-- <article class="poisson-card">
-                <img src="https://via.placeholder.com/400x200?text=Carpe" alt="Carpe" class="poisson-image">
-                <div class="p-4">
-                    <h2 class="text-xl font-semibold mb-2">Carpe</h2>
-                    <p class="text-gray-600 mb-4">La carpe est un poisson robuste qui s'adapte bien à l'aquaponie. Elle est connue pour sa capacité à supporter des variations de température.</p>
-                    <ul class="text-sm text-gray-600 mb-4">
-                        <li><strong>Taille adulte :</strong> 30-60 cm</li>
-                        <li><strong>Température idéale :</strong> 20-28°C</li>
-                        <li><strong>pH optimal :</strong> 6.5-9.0</li>
-                    </ul>
-                    <a href="poisson-carpe.html" class="text-blue-600 hover:underline">En savoir plus</a>
-                </div>
-            </article> -->
+           
             <article class="poisson-card">
                 <img src="Images/truite1.jpg" alt="Truite" class="poisson-image">
                 <div class="p-4">
                     <h2 class="text-xl font-semibold mb-2">Truite</h2>
-                    <p class="text-gray-600 mb-4">Goûtez à la fraîcheur ultime avec nos truites élevées en aquaponie, récoltées sur commande.</p>
-                        <!-- La truite est excellente pour l'aquaponie en eau froide. Elle produit une grande quantité de déchets nutritifs pour les plantes. -->
-                    <ul class="text-sm text-gray-600 mb-4">
-                        <li><strong>Taille adulte :</strong> 15-25 cm</li>
-                        <!-- <li><strong>Température idéale :</strong> 10-18°C</li>
-                        <li><strong>pH optimal :</strong> 6.5-8.0</li> -->
-                    </ul>
-                    <a href="poisson-truite.html" class="text-blue-600 hover:underline">En savoir plus</a>
+                    <p class="text-gray-600 mb-4">Goûtez à la fraîcheur ultime avec nos truites élevées en aquaponie, récoltées sur commande.</p> <br>
+                    <a href="" class="commander">Commander</a> 
                 </div>
             </article>
-            <!-- <article class="poisson-card">
-                <img src="https://via.placeholder.com/400x200?text=Perche" alt="Perche" class="poisson-image">
-                <div class="p-4">
-                    <h2 class="text-xl font-semibold mb-2">Perche</h2>
-                    <p class="text-gray-600 mb-4">La perche est un bon choix pour l'aquaponie, offrant une croissance rapide et une bonne résistance aux maladies.</p>
-                    <ul class="text-sm text-gray-600 mb-4">
-                        <li><strong>Taille adulte :</strong> 20-35 cm</li>
-                        <li><strong>Température idéale :</strong> 18-25°C</li>
-                        <li><strong>pH optimal :</strong> 6.5-8.0</li>
-                    </ul>
-                    <a href="poisson-perche.html" class="text-blue-600 hover:underline">En savoir plus</a>
-                </div>
-            </article>
+
             <article class="poisson-card">
-                <img src="https://via.placeholder.com/400x200?text=Poisson-chat" alt="Poisson-chat" class="poisson-image">
+                <img src="Images/carpe.avif" alt="Carpe" class="poisson-image">
                 <div class="p-4">
-                    <h2 class="text-xl font-semibold mb-2">Poisson-chat</h2>
-                    <p class="text-gray-600 mb-4">Le poisson-chat est très résistant et s'adapte bien à diverses conditions. Il est efficace pour convertir les aliments en nutriments pour les plantes.</p>
-                    <ul class="text-sm text-gray-600 mb-4">
-                        <li><strong>Taille adulte :</strong> 30-50 cm</li>
-                        <li><strong>Température idéale :</strong> 20-30°C</li>
-                        <li><strong>pH optimal :</strong> 6.0-8.0</li>
-                    </ul>
-                    <a href="poisson-chat.html" class="text-blue-600 hover:underline">En savoir plus</a>
+                    <h2 class="text-xl font-semibold mb-2">Carpe</h2>
+                    <p class="text-gray-600 mb-4"> poisson frais et élevés dans des conditions optimales.</p>  <br>
+                    <a href="" class="commander">Commander</a> 
                 </div>
             </article>
-            <article class="poisson-card">
-                <img src="https://via.placeholder.com/400x200?text=Bar" alt="Bar" class="poisson-image">
-                <div class="p-4">
-                    <h2 class="text-xl font-semibold mb-2">Bar</h2>
-                    <p class="text-gray-600 mb-4">Le bar est un excellent choix pour l'aquaponie en eau saumâtre. Il est apprécié pour sa chair de qualité et sa croissance rapide.</p>
-                    <ul class="text-sm text-gray-600 mb-4">
-                        <li><strong>Taille adulte :</strong> 40-65 cm</li>
-                        <li><strong>Température idéale :</strong> 18-26°C</li>
-                        <li><strong>pH optimal :</strong> 7.0-8.5</li>
-                    </ul>
-                    <a href="poisson-bar.html" class="text-blue-600 hover:underline">En savoir plus</a>
-                </div>
-            </article> -->
+          
         </div>
     </main>
 
@@ -315,43 +304,38 @@
             <img src="logo.png" alt="logo_car" class="logocar">
         </div>
         <div class="second">
-            <p> Acteurs: <br>
-                AMIDI <br>
+            <h2 class="text-lg"> Acteurs: </h2>
+            <p > AMIDI <br>
                 B.INTER <br>
                 JAM ALLO GROUPE <br>
                 SERENITY TRAVEL AGENCY
             </p>
         </div>
         <div class="third">
-            <p> Réseaux sociaux:
-                </p><br>
+            <h2 class="text-lg "> Réseaux sociaux: </h2>
                 <p class="net">
-                    <a href="https://www.instagram.com/"class="img1" target="_blank"target="_blank"><i class="fa-brands fa-instagram" style="color:#DD2A7B;" ></i></a>
-                    <a href="https://www.twitter.com" class="img2" target="_blank"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a>
-                    <a href="https://www.facebook.com" class="img3"target="_blank"><i class="fa-brands fa-facebook-f" style="color: #3b5998;"></i></a>
-                    <a href="https://www.youtube.com" class="img4"target="_blank"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i></a>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/lamergo_group/profilecard/?igsh=MXRvdWFte TEObGY waQ==" target="_blank" class="fa-brands fa-instagram"></a>
+                        <a href="https://www.twitter.com" target="_blank" class="fa-brands fa-twitter"></a>
+                        <a href="https://www.facebook.com" target="_blank" class="fa-brands fa-facebook-f"></a>
+                        <a href="https://www.youtube.com" target="_blank" class="fa-brands fa-youtube"></a>
+                      </div>
+            
                 </p>
         </div>
     
         <div class="fourth"> 
-            <p>Contacts:<br><br>
-                +212 555-0000 <br><br>
+            <h2 class="text-lg">Contacts: </h2>
+           <p>  +212 555-0000 <br>
                 Email:<br> </p>
                 <p>
                site web: www.race.com
                 </p>
         </div>
-        <div class="fifth"> <address> Adresse</address>
-            <p>
-                Tambacounda, Senegal
-                </p><br>
+        <div class="fifth"> <address class="text-lg"> Adresse</address>
+            <p> Tambacounda, Senegal </p><br>
     </footer> 
 
-    <!-- <footer class="bg-blue-600 text-white p-4 mt-8">
-        <div class="container mx-auto text-center">
-            &copy; 2023 AquaGrow. Tous droits réservés.
-        </div>
-    </footer> -->
     <script>
         /* Modal*/
     function openModal(modalId) {
